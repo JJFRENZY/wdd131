@@ -1,0 +1,26 @@
+@media (min-width: 640px) {
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        color: #ffffff;
+    }
+
+    h1{
+        margin-left: 30px;
+    }
+    
+    #menu {
+        display: none;
+    }
+
+    .navigation {
+        justify-content: flex-end;
+        flex-direction: row;
+    }
+
+    .navigation a {
+        display: block;
+        flex: 1 1 100%;
+    }
+}
