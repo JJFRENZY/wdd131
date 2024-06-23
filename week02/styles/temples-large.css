@@ -6,21 +6,21 @@
         color: #ffffff;
     }
 
-    h1{
-        margin-left: 30px;
+    h1 {
+        margin-left: 30px; /* Adjusted margin for h1 */
     }
     
     #menu {
-        display: none;
+        display: none; /* Hide the menu button at larger screens */
     }
 
     .navigation {
-        justify-content: flex-end;
-        flex-direction: row;
+        justify-content: flex-end; /* Align navigation links to the right */
+        flex-direction: row; /* Display navigation links horizontally */
     }
 
     .navigation a {
-        display: block;
-        flex: 1 1 100%;
+        display: block; /* Display navigation links as block elements */
+        flex: 1 1 100%; /* Make navigation links fill the available space evenly */
     }
 }
