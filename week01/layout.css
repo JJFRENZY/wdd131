@@ -1,0 +1,126 @@
+/*
+.parent {
+  display: grid;
+  grid-template: auto auto auto auto / 3fr 1fr;
+}
+  
+header {
+  background: grey;
+  padding: 2rem;
+  grid-column: 1 / 3;
+}
+.nav {
+  background: black;
+  padding: 2rem;
+  grid-column: 1 / 3;
+} 
+.main {
+  background: lightgrey;
+  padding: 2rem;
+  grid-column: 1 / 2;
+}
+.aside {
+  background: white;
+  padding: 2rem;
+  grid-column: 2 / 3;
+}
+footer{
+  background: grey;
+  padding: 2rem;
+  grid-column: 1 / 3;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: gray;
+}
+*/
+parent {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-columns: 3fr 1fr;
+  height: 100vh;
+  gap: 1rem;
+}
+
+header {
+  background: grey;
+  padding: 2rem;
+  grid-column: 1 / 3;
+}
+
+.nav {
+  background: black;
+  padding: 2rem;
+  grid-column: 1 / 3;
+} 
+
+.main {
+  background: lightgrey;
+  padding: 2rem;
+  grid-column: 1 / 2;
+  overflow: auto;
+}
+
+.aside {
+  background: white;
+  padding: 2rem;
+  grid-column: 2 / 3;
+  overflow: auto;
+}
+
+footer {
+  background: grey;
+  padding: 2rem;
+  grid-column: 1 / 3;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: gray;
+}
+
+/* Make the content stretch */
+.main.content, .aside.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
