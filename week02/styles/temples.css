@@ -1,100 +1,124 @@
-/* Image Styling */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styling */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-/* Header Styling */
+/*Header and nav bar*/
 header {
-    background: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-/* Navigation Styling */
-nav {
-    background: #444;
-    color: #fff;
-    padding: 10px 0;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 10px;
-}
-
-nav ul li a:hover {
-    background: #555;
-    border-radius: 5px;
-}
-
-/* Main Content Styling */
-main {
+    background-color: #3a076e;
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 20px;
+    grid-gap: 1rem;
     padding: 20px;
-    flex: 1;
+    border: 1px solid #3a076e;
 }
 
-.main-content {
-    flex: 3;
-    padding: 20px;
-    background: #f4f4f4;
+header, main {
+    margin: 0 auto;
 }
 
-aside {
-    flex: 1;
-    padding: 20px;
-    background: #ddd;
-    margin-left: 20px;
+h1 {
+    font-size: 3rem;
+    color: #eaeaea;
 }
 
-/* Footer Styling */
-footer {
-    background: #333;
-    color: #fff;
+nav {
+    background-color: #3a076e;
+    margin: 1rem auto;
+}
+
+#menu {
+    font-size: 3rem;
+    border: 0;
+    background: none;
+    color: #eaeaea;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+#menu::before {
+    content: "≡";
+}
+
+#menu.open::before {
+    content: "X";
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    background-color: #3a076e;
+    color: #eaeaea;
+}
+
+
+.navigation a {
+    display: none;
+    color: #eaeaea;
     text-align: center;
-    padding: 10px 0;
+    text-decoration: none;
+    padding: 1rem;
+    transition: 0.3s;
+    font-size: 25px;
+    font-weight: bold;
 }
 
-@font-face {
-    font-family: Playwright;
-    src: url(https://fonts.google.com/specimen/Playwrite+AU+QLD);
+.navigation a:hover {
+    background-color: #ad91ff;
+    color: #2b2b2b;
+    font-weight: bold;
+    text-decoration: overline;
 }
 
-h1{
-    font-family: Playwright;
+.open a {
+    display: block;
 }
 
-h2{
-    font-family: Arial, Helvetica, sans-serif;
+/*Main with gallery*/
+
+main {
+    margin: 1rem auto;
+    max-width: 75%;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    grid-gap: 30px;
+    place-items: center;
+    text-align: center;
+}
+
+figure {
+    background: none;
+}
+
+img {
+    width: auto;
+    height: 220px;
+    margin: .5rem;
+}
+
+figcaption {
+    font-size: small;
+}
+
+
+/*Footer*/
+
+footer {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(58, 7, 110);
+    color: #ffffff;
+    font-size: 20px;
 }
