@@ -51,6 +51,13 @@ header {
     font-size: large;
 }
 
+.svg-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--margin-standard);
+}
+
 .hero, .table-container, 
 .data-title, .weather-title {
     display: flex;
