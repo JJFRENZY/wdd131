@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const windChillElement = document.querySelector("#windChill");
 
     if (temperatureElement && windSpeedElement && windChillElement) {
-        const temperatureValue = parseFloat(temperatureElement.textContent.replace('°C', ''));
-        const windSpeedValue = parseFloat(windSpeedElement.textContent.replace(' km/h', ''));
+        const temperatureValue = parseFloat(temperatureElement.textContent);
+        const windSpeedValue = parseFloat(windSpeedElement.textContent);
 
         const calculateWindChill = (temperature, windSpeed) => {
             if (temperature > 10 || windSpeed <= 4.8) {

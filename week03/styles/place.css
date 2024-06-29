@@ -27,7 +27,7 @@ header {
     align-items: center;
     justify-content: center;
     background-color: #f60b0b;
-    border-bottom: .5rem solid #ffffff;
+    border-bottom: 5px solid #ffffff; /* Changed to a solid line */
     color: #fff;
     padding: 30px;
     font-family: "Merriweather", serif;
@@ -51,32 +51,18 @@ header {
     align-items: center;
     justify-content: center;
     color: #000;
-}
-
-.hero picture,
-.hero img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-}
-
-.data-title {
-    margin-bottom: 1rem;
-}
-
-.weather-title img {
-    width: 5rem;
-    height: auto;
+    background-color: rgba(255, 255, 255, 0.7); /* Added background color directly */
+    border-radius: 1rem; /* Added border radius directly */
+    padding: 1rem 2rem; /* Adjusted padding */
 }
 
 .table-container {
-    padding: 1rem 2rem 2rem;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 1rem;
+    margin-bottom: 1rem; /* Added margin bottom for spacing */
 }
 
 table td {
     padding-bottom: .5rem;
+    text-align: right; /* Adjusted text alignment */
 }
 
 table td:first-child {
@@ -102,5 +88,5 @@ footer p {
 }
 
 #lastModifiedDate {
-    font-size: var(--font-size-small); /* This can be removed as per requirements */
+    font-size: 14px; /* Adjusted font size */
 }
