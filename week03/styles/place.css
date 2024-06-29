@@ -82,10 +82,9 @@ header {
     border-radius: var(--border-radius-standard);
 }
 
-table td{
+table td {
     padding-bottom: .5rem;
 }
-
 
 table td:first-child {
     text-align: right;
@@ -149,7 +148,6 @@ footer p {
     }
 
     .weather-title h2::after {
-    
         content: "⛅";
         margin-left: .5rem;
     }

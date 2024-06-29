@@ -1,34 +1,34 @@
 // Update current year and the date the document was last modified
-const year = document.querySelector("#year");
-const today = new Date();
+document.addEventListener("DOMContentLoaded", () => {
+    const yearElement = document.querySelector("#year");
+    const lastModifiedElement = document.getElementById('lastModifiedDate');
+    const today = new Date();
+    const lastModifiedDate = new Date(document.lastModified);
+    const formattedDate = lastModifiedDate.toLocaleString();
 
-const lastModifiedElement = document.getElementById('lastModifiedDate');
-const lastModifiedDate = new Date(document.lastModified);
-const formattedDate = lastModifiedDate.toLocaleString();
+    yearElement.innerHTML = `&copy; <span>${today.getFullYear()}</span> &#128051; Cristobal Henriquez &#128051; Canada`;
+    lastModifiedElement.textContent = 'Last Modified: ' + formattedDate;
 
-year.innerHTML = `&copy <span>${today.getFullYear()}</span> &#128051 Cristobal Henriquez &#128051 Canada`;
+    // Weather
+    const temperatureElement = document.querySelector("#temperature");
+    const windSpeedElement = document.querySelector("#windSpeed");
+    const windChillElement = document.querySelector("#windChill");
 
-lastModifiedElement.textContent = 'Last Modified: ' + formattedDate;
+    // Extract numerical values from the text content
+    const temperatureValue = parseFloat(temperatureElement.textContent.replace('°C', ''));
+    const windSpeedValue = parseFloat(windSpeedElement.textContent.replace(' km/h', ''));
 
-// Weather
-const temperatureElement = document.querySelector("#temperature");
-const windSpeedElement = document.querySelector("#windSpeed");
-const windChillElement = document.querySelector("#windChill");
+    const calculateWindChill = (temperature, windSpeed) => {
+        if (temperature > 10 || windSpeed <= 4.8) {
+            return "N/A";
+        }
+        const windChill = 13.12 + 0.6215 * temperature - 11.37 * Math.pow(windSpeed, 0.16) + 0.3965 * temperature * Math.pow(windSpeed, 0.16);
+        return windChill.toFixed(2); // Round to two decimal places
+    };
 
-// Extract numerical values from the text content
-const temperatureValue = parseFloat(temperatureElement.textContent.replace('°C', ''));
-const windSpeedValue = parseFloat(windSpeedElement.textContent.replace(' km/h', ''));
+    // Calculate wind chill value
+    const windChillValue = calculateWindChill(temperatureValue, windSpeedValue);
 
-const calculateWindChill = (temperature, windSpeed) => {
-    if (temperature > 10 || windSpeed <= 4.8) {
-        return "N/A";
-    }
-    const windChill = 13.12 + 0.6215 * temperature - 11.37 * Math.pow(windSpeed, 0.16) + 0.3965 * temperature * Math.pow(windSpeed, 0.16);
-    return windChill.toFixed(2); // Round to two decimal places
-};
-
-// Calculate wind chill value
-const windChillValue = calculateWindChill(temperatureValue, windSpeedValue);
-
-// Update the DOM with the wind chill value
-windChillElement.textContent = `${windChillValue} °C`;
+    // Update the DOM with the wind chill value
+    windChillElement.textContent = `${windChillValue} °C`;
+});
