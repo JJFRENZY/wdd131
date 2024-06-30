@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const lastModifiedDate = new Date(document.lastModified);
     const formattedDate = lastModifiedDate.toLocaleString();
 
-    yearElement.innerHTML = `&copy; <span>${today.getFullYear()}</span> &#128051; Cristobal Henriquez &#128051; Canada`;
+    yearElement.innerHTML = `&copy; <span>${today.getFullYear()}</span> &#128051; Jack Eckersley &#128051; United States`;
     lastModifiedElement.textContent = 'Last Modified: ' + formattedDate;
 
     const temperatureElement = document.querySelector("#temperature");
