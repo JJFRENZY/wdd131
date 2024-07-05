@@ -1,0 +1,26 @@
+@media (min-width: 640px) {
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        color: #ffffff;
+    }
+
+    h1 {
+        margin-left: 30px; /* Adjusted margin for h1 */
+    }
+    
+    #menu {
+        display: none; /* Hide the menu button at larger screens */
+    }
+
+    .navigation {
+        justify-content: flex-end; /* Align navigation links to the right */
+        flex-direction: row; /* Display navigation links horizontally */
+    }
+
+    .navigation a {
+        display: block; /* Display navigation links as block elements */
+        flex: 1 1 100%; /* Make navigation links fill the available space evenly */
+    }
+}
