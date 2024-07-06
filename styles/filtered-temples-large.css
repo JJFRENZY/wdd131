@@ -9,10 +9,6 @@
     h1 {
         margin-left: 30px; /* Adjusted margin for h1 */
     }
-    
-    #menu {
-        display: none; /* Hide the menu button at larger screens */
-    }
 
     .navigation {
         justify-content: flex-end; /* Align navigation links to the right */
