@@ -85,3 +85,89 @@ const temples = [
     
     // Add more temple objects here...
   ];
+  const templeList = document.querySelector(".temples-list") 
+  const home = document.querySelector("#home")
+const oldTemples = document.querySelector('#old')
+const newTemples = document.querySelector('#new')
+const largeTemples = document.querySelector('#large')
+const smallTemples = document.querySelector('#small')
+
+oldTemples.addEventListener('click', () => {
+    const olderTemples = temples.filter(temple => {
+        const year = parseInt(temple.dedicated.split(',')[0], 10)
+        return year < 1900
+    })
+    console.log(olderTemples)
+    createTempleCard(olderTemples)
+})
+
+home.addEventListener('click', () => {
+    createTempleCard(temples)
+})
+
+
+newTemples.addEventListener('click', () => {
+    const newerTemples = temples.filter(temple => {
+        const year = parseInt(temple.dedicated.split(',')[0], 10)
+        return year > 2000;
+    });
+    createTempleCard(newerTemples)
+})
+
+largeTemples.addEventListener('click', () => {
+    const largerTemples = temples.filter(temple => {
+        const size = temple.area
+        return size > 90000;
+    })
+    createTempleCard(largerTemples)
+})
+
+smallTemples.addEventListener('click', () => {
+    const smallerTemples = temples.filter(temple => {
+        const size = temple.area
+        return size > 100000;
+    })
+    createTempleCard(smallerTemples)
+})
+
+
+
+function createTempleCard(filteredTemples) {
+    templeList.innerHTML = '';
+    filteredTemples.forEach(temple => {
+        const templeCard = document.createElement('div')
+        templeCard.className = 'temple-card'
+    
+        const templeName = document.createElement('h3')
+        templeName.textContent = temple.templeName
+        templeCard.appendChild(templeName)
+    
+        const templeText = document.createElement('div')
+        templeText.className = 'temple-text'
+    
+        const templeLocation = document.createElement('p')
+        templeLocation.textContent = `Location: ${temple.location}`
+        templeText.appendChild(templeLocation)
+    
+        const templeDedicated = document.createElement('p')
+        templeDedicated.textContent = `Dedicated: ${temple.dedicated}`
+        templeText.appendChild(templeDedicated)
+    
+        const templeArea = document.createElement('p')
+        templeArea.textContent = `Size: ${temple.area} sq ft`
+        templeText.appendChild(templeArea)
+        
+        templeCard.appendChild(templeText)
+    
+        const templeImage = document.createElement('img')
+        templeImage.src = temple.imageUrl
+        templeImage.alt = `The beautiful ${temple.templeName}`
+        templeImage.loading = 'lazy'
+        templeCard.appendChild(templeImage)
+    
+        
+        templeList.appendChild(templeCard)
+    })
+}
+
+createTempleCard(temples);
