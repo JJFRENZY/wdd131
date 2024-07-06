@@ -10,17 +10,12 @@
         margin-left: 30px; /* Adjusted margin for h1 */
     }
     
-    #menu {
-        display: none; /* Hide the menu button at larger screens */
+    nav ul li {
+        display: inline-block;
+        margin-right: 1rem;
     }
 
-    .navigation {
-        justify-content: flex-end; /* Align navigation links to the right */
-        flex-direction: row; /* Display navigation links horizontally */
-    }
-
-    .navigation a {
-        display: block; /* Display navigation links as block elements */
-        flex: 1 1 100%; /* Make navigation links fill the available space evenly */
+    nav ul li a {
+        display: inline-block;
     }
 }

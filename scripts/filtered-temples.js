@@ -71,81 +71,36 @@ document.addEventListener('DOMContentLoaded', () => {
           dedicated: "2023, October, 22",
           area: 48525,
           imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/bangkok-thailand-temple/bangkok-thailand-temple-40037.jpg"
-      },
+      }
   ];
 
-  const templeList = document.querySelector(".temple-list");
+  const templeList = document.querySelector('.temple-list');
 
-  function createTempleCard(filteredTemples) {
-      templeList.innerHTML = '';
-      filteredTemples.forEach(temple => {
-          const templeCard = document.createElement('div');
-          templeCard.className = 'temple-card';
+  temples.forEach(temple => {
+      const templeCard = document.createElement('div');
+      templeCard.className = 'temple-card';
 
-          const templeName = document.createElement('h3');
-          templeName.textContent = temple.templeName;
-          templeCard.appendChild(templeName);
+      const templeImage = document.createElement('img');
+      templeImage.src = temple.imageUrl;
+      templeImage.alt = temple.templeName;
+      templeCard.appendChild(templeImage);
 
-          const templeText = document.createElement('div');
-          templeText.className = 'temple-text';
+      const templeName = document.createElement('h3');
+      templeName.textContent = temple.templeName;
+      templeCard.appendChild(templeName);
 
-          const templeLocation = document.createElement('p');
-          templeLocation.textContent = `Location: ${temple.location}`;
-          templeText.appendChild(templeLocation);
+      const templeLocation = document.createElement('p');
+      templeLocation.textContent = `Location: ${temple.location}`;
+      templeCard.appendChild(templeLocation);
 
-          const templeDedicated = document.createElement('p');
-          templeDedicated.textContent = `Dedicated: ${temple.dedicated}`;
-          templeText.appendChild(templeDedicated);
+      const templeDedicated = document.createElement('p');
+      templeDedicated.textContent = `Dedicated: ${temple.dedicated}`;
+      templeCard.appendChild(templeDedicated);
 
-          const templeArea = document.createElement('p');
-          templeArea.textContent = `Size: ${temple.area} sq ft`;
-          templeText.appendChild(templeArea);
+      const templeArea = document.createElement('p');
+      templeArea.textContent = `Area: ${temple.area} sq ft`;
+      templeCard.appendChild(templeArea);
 
-          templeCard.appendChild(templeText);
-
-          const templeImage = document.createElement('img');
-          templeImage.src = temple.imageUrl;
-          templeImage.alt = `The beautiful ${temple.templeName}`;
-          templeImage.loading = 'lazy';
-          templeCard.appendChild(templeImage);
-
-          templeList.appendChild(templeCard);
-      });
-  }
-
-  createTempleCard(temples);
-
-  const home = document.querySelector("a[href='#home']");
-  const oldTemples = document.querySelector("a[href='#old']");
-  const newTemples = document.querySelector("a[href='#new']");
-  const largeTemples = document.querySelector("a[href='#large']");
-  const smallTemples = document.querySelector("a[href='#small']");
-
-  home.addEventListener('click', () => createTempleCard(temples));
-
-  oldTemples.addEventListener('click', () => {
-      const olderTemples = temples.filter(temple => {
-          const year = parseInt(temple.dedicated.split(',')[0], 10);
-          return year < 1900;
-      });
-      createTempleCard(olderTemples);
-  });
-
-  newTemples.addEventListener('click', () => {
-      const newerTemples = temples.filter(temple => {
-          const year = parseInt(temple.dedicated.split(',')[0], 10);
-          return year > 2000;
-      });
-      createTempleCard(newerTemples);
-  });
-
-  largeTemples.addEventListener('click', () => {
-      const largerTemples = temples.filter(temple => temple.area > 90000);
-      createTempleCard(largerTemples);
-  });
-
-  smallTemples.addEventListener('click', () => {
-      const smallerTemples = temples.filter(temple => temple.area <= 100000);
-      createTempleCard(smallerTemples);
+      templeList.appendChild(templeCard);
   });
 });
