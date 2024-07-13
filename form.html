@@ -3,27 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Product Review - Assignment</title>
+    <meta name="description" content="Form for submitting product reviews.">
+    <meta name="author" content="Your Name">
+    <link rel="stylesheet" href="form.css">
+    <script defer src="form.js"></script>
 </head>
 <body>
-    <!-- Main content goes here -->
-    <legend>Funding</legend>
-            <label>Anticipated Completion Date <input type="date" name="completeDate"></label>
-            <label>Product Name
-                <form>
-                    <select name="product">
-                        <option value="">Please Select &#9662;</option>
-                        <option value="software">Software Development</option>
-                        <option value="creative">Creative Professional</option>
-                        <option value="info">Information Technology</option>
-                    </select>
-                </form>
-            </label> 
-    <!-- Common footer content -->
+    <div class="container">
+        <h1>Product Review</h1>
+        <form action="review.html" method="get">
+            <label for="product">Product Name</label>
+            <select id="product" name="product" required>
+                <option value="" disabled selected>Select a Product ...</option>
+                <!-- Dynamic options will be inserted here by JavaScript -->
+            </select>
+
+            <label>Overall Rating</label>
+            <div class="rate">
+                <input type="radio" id="star5" name="rate" value="5" required />
+                <label for="star5" title="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</label>
+                <input type="radio" id="star4" name="rate" value="4" />
+                <label for="star4" title="4 stars">&#9733;&#9733;&#9733;&#9733;&#9734;</label>
+                <input type="radio" id="star3" name="rate" value="3" />
+                <label for="star3" title="3 stars">&#9733;&#9733;&#9733;&#9734;&#9734;</label>
+                <input type="radio" id="star2" name="rate" value="2" />
+                <label for="star2" title="2 stars">&#9733;&#9733;&#9734;&#9734;&#9734;</label>
+                <input type="radio" id="star1" name="rate" value="1" />
+                <label for="star1" title="1 star">&#9733;&#9734;&#9734;&#9734;&#9734;</label>
+            </div>
+
+            <label for="date">Date of Installation</label>
+            <input type="date" id="date" name="date" required>
+
+            <label>Which features did you find useful in the product? (Check all that apply)</label>
+            <div class="features">
+                <input type="checkbox" id="durability" name="features" value="durability">
+                <label for="durability">Durability</label><br>
+                <input type="checkbox" id="easeOfUse" name="features" value="easeOfUse">
+                <label for="easeOfUse">Ease of Use</label><br>
+                <input type="checkbox" id="performance" name="features" value="performance">
+                <label for="performance">Performance</label><br>
+                <input type="checkbox" id="design" name="features" value="design">
+                <label for="design">Design</label>
+            </div>
+
+            <label for="review">Written Review (Optional)</label>
+            <textarea id="review" name="review" rows="4"></textarea>
+
+            <label for="name">Your Name (Optional)</label>
+            <input type="text" id="name" name="name">
+
+            <input type="submit" value="Post Review">
+        </form>
+    </div>
     <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
-        <p>For any queries, contact: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
+        <p>&copy; 2024 Jack Eckersley Utah</p>
+        <p>Last Modification: 02/26/2024 13:56:10</p>
     </footer>
 </body>
 </html>
