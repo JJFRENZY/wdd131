@@ -86,15 +86,17 @@ button:hover, input[type="submit"]:hover {
 }
 
 /* Footer styling */
+/* Footer styling */
 footer {
     width: 100%;
     text-align: center;
     background-color: #3a3a3a;
     color: #fff;
     padding: 10px 0;
-    position: fixed;
+    position: absolute; /* Change from fixed to absolute */
     bottom: 0;
 }
+
 footer p {
     margin: 5px 0;
 }
