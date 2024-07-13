@@ -15,18 +15,18 @@ body {
 .container {
     background-color: #fff;
     border-radius: 10px;
-    padding: 20px;
+    padding: 20px; /* Existing padding */
+    padding-right: 40px; /* Additional padding on the right side */
     width: 400px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin: auto; /* Center the form horizontally */
     margin-bottom: 80px; /* Provide space for the footer */
 }
 
-/* Header styling */
-h1 {
-    text-align: center;
-    color: #3a3a3a;
-    margin-bottom: 20px;
+/* Ensure form elements don't touch the sides */
+form {
+    display: flex;
+    flex-direction: column;
 }
 
 /* Label styling */
@@ -38,7 +38,7 @@ label {
 
 /* Input and select styling */
 select, input[type="date"], input[type="text"], textarea {
-    width: 100%;
+    width: calc(100% - 20px); /* Adjust width to accommodate padding */
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -74,7 +74,7 @@ select, input[type="date"], input[type="text"], textarea {
 
 /* Button styling */
 button, input[type="submit"] {
-    width: 100%;
+    width: calc(100% - 20px); /* Adjust width to accommodate padding */
     padding: 10px;
     background-color: #4CAF50;
     color: white;
@@ -87,7 +87,6 @@ button:hover, input[type="submit"]:hover {
     background-color: #45a049;
 }
 
-/* Footer styling */
 /* Footer styling */
 footer {
     width: 100%;
