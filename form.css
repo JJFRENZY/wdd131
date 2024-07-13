@@ -50,6 +50,7 @@ select, input[type="date"], input[type="text"], textarea {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    align-items: center; /* Align items vertically */
 }
 .rate input {
     display: none;
