@@ -1,0 +1,98 @@
+/* Import Matrix Regular Small Caps */
+@font-face {
+    font-family: 'Matrix Regular Small Caps';
+    src: url('fonts/MatrixRegularSmallCaps.woff2') format('woff2'),
+         url('fonts/MatrixRegularSmallCaps.woff') format('woff'),
+         url('fonts/MatrixRegularSmallCaps.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Import Matrix Book */
+@font-face {
+    font-family: 'Matrix Book';
+    src: url('fonts/MatrixBook.woff2') format('woff2'),
+         url('fonts/MatrixBook.woff') format('woff'),
+         url('fonts/MatrixBook.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply the fonts to specific elements or classes */
+body {
+    font-family: 'Matrix Book', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Matrix Regular Small Caps', sans-serif;
+}
+/* Basic styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+
+header h1, footer p {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    background-color: #444;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0;
+}
+
+nav a {
+    display: block;
+    padding: 1em;
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+article {
+    flex: 1;
+}
+
+aside {
+    background-color: #f4f4f4;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+/* Styles for wider screens */
+@media (min-width: 768px) {
+    main {
+        flex-direction: row;
+    }
+    
+    article {
+        flex: 3;
+        margin-right: 1em;
+    }
+    
+    aside {
+        flex: 1;
+        margin-top: 0;
+    }
+}
